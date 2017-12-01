@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1032781140475470
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 20763729519212858}
   - component: {fileID: 81562105076126812}
   - component: {fileID: 124596284455965176}
+  - component: {fileID: 114107845961865168}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -73,7 +74,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4858459412173682}
   m_Father: {fileID: 4737839959566686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,7 +90,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4403369189101676}
-  - {fileID: 4858459412173682}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,12 +99,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032781140475470}
-  m_LocalRotation: {x: 0.09410833, y: 0, z: 0, w: 0.995562}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0.02}
+  m_LocalRotation: {x: 0.09410833, y: -0, z: -0, w: 0.995562}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4737839959566686}
-  m_RootOrder: 1
+  m_Father: {fileID: 4403369189101676}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10.8, y: 0, z: 0}
 --- !u!20 &20763729519212858
 Camera:
@@ -278,6 +279,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114107845961865168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388127345005542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: f0a05c54febfe8a4590457c71884f5c2, type: 2}
 --- !u!114 &114247399734242368
 MonoBehaviour:
   m_ObjectHideFlags: 1
