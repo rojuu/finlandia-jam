@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	bool isDrinking = false;
+	public bool isDrinking = false;
 
 	void Start () {
 		currentWarmth = maxWarmth;
