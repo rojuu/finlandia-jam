@@ -4,11 +4,19 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-
 	public float maxWarmth;
-	public float warmthChangePerSecond;
-	public Text warmthIndicator;
-	public float currentWarmth;
+	public float warmthDepletePerSecond;
+	public float warmthGainPerSecond;
+
+	private float _currentWarmth;
+	public float currentWarmth {
+		get {
+			return _currentWarmth;
+		}
+		set {
+			_currentWarmth = Mathf.Clamp(value, 0, maxWarmth);
+		}
+	}
 
 	bool isDrinking = false;
 
@@ -17,11 +25,9 @@ public class Player : MonoBehaviour {
 	}
 	
 	void Update () {
-		warmthIndicator.text = "Warmth: " + Mathf.RoundToInt(currentWarmth);
-
 		if (Input.GetMouseButton(0)) {
 			isDrinking = true;
-			currentWarmth += warmthChangePerSecond * Time.deltaTime;
+			currentWarmth += warmthGainPerSecond * Time.deltaTime;
 		}
 
 		if (!Input.GetMouseButton(0)) {
@@ -29,7 +35,7 @@ public class Player : MonoBehaviour {
 		}
 
 		if (currentWarmth > 0 && !isDrinking) {
-			currentWarmth -= warmthChangePerSecond * Time.deltaTime;
+			currentWarmth -= warmthDepletePerSecond * Time.deltaTime;
 		}
 	}
 }
