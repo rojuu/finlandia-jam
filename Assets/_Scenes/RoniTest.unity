@@ -224,7 +224,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 826230337}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -475,7 +475,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917778037509060, guid: 6f6b8e92e3a11a040890fb421022acd8, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 82295175710046314, guid: 6f6b8e92e3a11a040890fb421022acd8,
         type: 2}
@@ -817,12 +817,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4737839959566686, guid: 82ad4e4afe5ed9349aecdc56105333c2, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 82748063097595916, guid: 82ad4e4afe5ed9349aecdc56105333c2,
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852475326972546, guid: 82ad4e4afe5ed9349aecdc56105333c2, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82ad4e4afe5ed9349aecdc56105333c2, type: 2}
@@ -7869,6 +7873,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1852696944}
+  - {fileID: 1588615999}
   - {fileID: 74794297}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -7964,6 +7969,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1588615998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1588615999}
+  - component: {fileID: 1588616001}
+  - component: {fileID: 1588616000}
+  m_Layer: 5
+  m_Name: SAUNA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1588615999
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588615998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 826230337}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1588616000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588615998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 48
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 71
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Press E to SAUNA
+
+'
+--- !u!222 &1588616001
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588615998}
 --- !u!1 &1728044965
 GameObject:
   m_ObjectHideFlags: 0
@@ -8006,7 +8087,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4723970943341576, guid: 7078acfa01f47694cb758e76d6292e6b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 13.344412
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 4723970943341576, guid: 7078acfa01f47694cb758e76d6292e6b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8014,7 +8095,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4723970943341576, guid: 7078acfa01f47694cb758e76d6292e6b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 29.005524
+      value: 14.56
       objectReference: {fileID: 0}
     - target: {fileID: 4723970943341576, guid: 7078acfa01f47694cb758e76d6292e6b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8043,9 +8124,9 @@ Prefab:
       objectReference: {fileID: 74794298}
     - target: {fileID: 114636099262331170, guid: 7078acfa01f47694cb758e76d6292e6b,
         type: 2}
-      propertyPath: warmthGainAmount
-      value: 100
-      objectReference: {fileID: 0}
+      propertyPath: saunaText
+      value: 
+      objectReference: {fileID: 1588616000}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7078acfa01f47694cb758e76d6292e6b, type: 2}
   m_IsPrefabParent: 0
