@@ -5,33 +5,32 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float maxWarmth;
-    public float warmthChangePerFrame;
-    public Text warmthIndicator;
-    public float currentWarmth;
+	public float maxWarmth;
+	public float warmthChangePerSecond;
+	public Text warmthIndicator;
+	public float currentWarmth;
 
-    bool isDrinking = false;
-
+	bool isDrinking = false;
 
 	void Start () {
-        currentWarmth = maxWarmth;
+		currentWarmth = maxWarmth;
 	}
 	
 	void Update () {
-        warmthIndicator.text = "Warmth: " + Mathf.RoundToInt(currentWarmth);
-        print(currentWarmth);
-        if (currentWarmth > 0 && !isDrinking) {
-            currentWarmth -= warmthChangePerFrame;
-        }
+		warmthIndicator.text = "Warmth: " + Mathf.RoundToInt(currentWarmth);
+		print(currentWarmth);
 
-        if (Input.GetMouseButton(0)) {
-            isDrinking = true;
-            currentWarmth += warmthChangePerFrame;
-        }
+		if (Input.GetMouseButton(0)) {
+			isDrinking = true;
+			currentWarmth += warmthChangePerSecond;
+		}
 
-        if (Input.GetMouseButtonUp(0)) {
-            isDrinking = false;
-        }
+		if (!Input.GetMouseButton(0)) {
+			isDrinking = false;
+		}
 
+		if (currentWarmth > 0 && !isDrinking) {
+			currentWarmth -= warmthChangePerSecond;
+		}
 	}
 }
