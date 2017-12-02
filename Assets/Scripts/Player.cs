@@ -18,11 +18,10 @@ public class Player : MonoBehaviour {
 	
 	void Update () {
 		warmthIndicator.text = "Warmth: " + Mathf.RoundToInt(currentWarmth);
-		print(currentWarmth);
 
 		if (Input.GetMouseButton(0)) {
 			isDrinking = true;
-			currentWarmth += warmthChangePerSecond;
+			currentWarmth += warmthChangePerSecond * Time.deltaTime;
 		}
 
 		if (!Input.GetMouseButton(0)) {
@@ -30,7 +29,7 @@ public class Player : MonoBehaviour {
 		}
 
 		if (currentWarmth > 0 && !isDrinking) {
-			currentWarmth -= warmthChangePerSecond;
+			currentWarmth -= warmthChangePerSecond * Time.deltaTime;
 		}
 	}
 }
