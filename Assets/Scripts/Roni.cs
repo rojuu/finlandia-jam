@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class Roni : MonoBehaviour {
 
-	// Use this for initialization
+    public float scaredAmount;
+    public AudioClip barkSound;
+
+    AudioSource audioSource;
+
 	void Start () {
-		
+        audioSource = GetComponent<AudioSource>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter(Collider other) {
+
+        print("Hauhau oot mun triggerin sisäl");
+    }
+
+    public void CalledRoni() {
+        audioSource.PlayOneShot(barkSound);
+    }
+
 }

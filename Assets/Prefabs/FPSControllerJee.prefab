@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 54941830517546020}
   - component: {fileID: 82748063097595916}
   - component: {fileID: 114521137438747234}
-  - component: {fileID: 114322828803887374}
   m_Layer: 0
   m_Name: FPSControllerJee
   m_TagString: Untagged
@@ -209,7 +208,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0.019607844}
+  m_BackGroundColor: {r: 0.23921569, g: 0.29803923, b: 0.36078432, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -475,21 +474,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
---- !u!114 &114322828803887374
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852475326972546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55742185a2819249896fbfa97c99dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxWarmth: 100
-  warmthChangePerSecond: 0.02
-  warmthIndicator: {fileID: 0}
-  currentWarmth: 0
 --- !u!114 &114521137438747234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -502,9 +486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWarmth: 100
-  warmthChangePerSecond: 0
-  warmthIndicator: {fileID: 0}
-  currentWarmth: 0
+  warmthDepletePerSecond: 2
+  warmthGainPerSecond: 5
+  callSound: {fileID: 8300000, guid: eee2f8b788eae5d4fa1ebfd5d375baf2, type: 3}
 --- !u!124 &124596284455965176
 Behaviour:
   m_ObjectHideFlags: 1
@@ -4674,7 +4658,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -4760,7 +4744,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7853982
+      scalar: 2.3561945
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -7271,8 +7255,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 1
+      scalar: 5
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8126,8 +8110,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 0.03529412}
-        key2: {r: 0, g: 0, b: 0, a: 0.03529412}
+        key1: {r: 1, g: 1, b: 1, a: 0.023529412}
+        key2: {r: 0, g: 0, b: 0, a: 0.023529412}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}

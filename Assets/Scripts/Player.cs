@@ -4,9 +4,14 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	float maxWarmth;
-	float warmthDepletePerSecond;
-	float warmthGainPerSecond;
+	public float maxWarmth;
+	public float warmthDepletePerSecond;
+	public float warmthGainPerSecond;
+    public AudioClip callSound;
+
+    AudioSource audioSource;
+
+    Roni roni;
 
 	private float _currentWarmth;
 	public float currentWarmth {
@@ -22,6 +27,8 @@ public class Player : MonoBehaviour {
 
 	void Start () {
 		currentWarmth = maxWarmth;
+        audioSource = GetComponent<AudioSource>();
+        roni = FindObjectOfType<Roni>();
 	}
 	
 	void Update () {
@@ -34,8 +41,20 @@ public class Player : MonoBehaviour {
 			isDrinking = false;
 		}
 
+        if (Input.GetMouseButtonDown(1)) {
+            StartCoroutine(CallRoni());
+        }
+
 		if (currentWarmth > 0 && !isDrinking) {
 			currentWarmth -= warmthDepletePerSecond * Time.deltaTime;
 		}
 	}
+
+
+    IEnumerator CallRoni() {
+        audioSource.PlayOneShot(callSound);
+        yield return new WaitForSeconds(callSound.length);
+        roni.CalledRoni();
+    }
+
 }
