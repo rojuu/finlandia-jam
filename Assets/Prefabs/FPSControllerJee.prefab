@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4742813910401912}
   - component: {fileID: 33902567472025314}
   - component: {fileID: 23512798182897038}
+  - component: {fileID: 114331249715402258}
   m_Layer: 0
   m_Name: JamHand
   m_TagString: Untagged
@@ -693,6 +694,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &114331249715402258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1369051976520798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723a762f18f045148b7018a3c603e826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationMaxAmount: 100
+  rotationSpeed: 200
 --- !u!114 &114521137438747234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -708,6 +722,7 @@ MonoBehaviour:
   warmthDepletePerSecond: 2
   warmthGainPerSecond: 5
   callSound: {fileID: 8300000, guid: eee2f8b788eae5d4fa1ebfd5d375baf2, type: 3}
+  isDrinking: 0
   drunkness: 0
   drunknessGainedPerSecond: 1
   drunknessLostPerSecond: 0.1
