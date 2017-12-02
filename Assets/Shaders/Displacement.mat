@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PostProcessing
+  m_Name: Displacement
   m_Shader: {fileID: 4800000, guid: 5958623b2e123aa468af58b2689ce5fc, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -18,9 +18,15 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _DisplaceTex:
+        m_Texture: {fileID: 2800000, guid: 23dc16b2387b19d42a1c3b13d571afc6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _Magnitude: 0.1
+    - _Speed: 1
     m_Colors: []
