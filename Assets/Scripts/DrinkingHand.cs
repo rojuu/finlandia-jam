@@ -25,7 +25,7 @@ public class DrinkingHand : MonoBehaviour {
 		rotationAmount += amount;
 		rotationAmount = Mathf.Clamp(rotationAmount, 0f, rotationMaxAmount);
 		if(rotationAmount < rotationMaxAmount && rotationAmount > 0) {
-			transform.RotateAround(transform.position + (transform.forward * 0.3f), transform.up, -amount);
+			transform.RotateAround(transform.position + (transform.forward * 0.3f) + (-transform.up * 0.2f), transform.up, -amount);
 		}
 	}
 }
