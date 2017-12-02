@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public float maxWarmth;
-	public float warmthDepletePerSecond;
-	public float warmthGainPerSecond;
+	float maxWarmth;
+	float warmthDepletePerSecond;
+	float warmthGainPerSecond;
 
 	private float _currentWarmth;
 	public float currentWarmth {

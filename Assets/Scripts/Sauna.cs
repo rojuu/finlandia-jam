@@ -4,31 +4,44 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Sauna : MonoBehaviour {
+	public Image fadeImage;
 	public float warmthGainAmount;
-	public Text saunaText;
-	public Player player;
-	public bool inSauna;
+
+	Text saunaText;
+	Player player;
+	bool isInSaunaTrigger;
+	bool usedSauna = false;
 
 	void Awake() {
 		player = FindObjectOfType<Player>();
 	}
+
 	void OnTriggerEnter(Collider col) {
 		if(col.tag == "Player") {
 			saunaText.gameObject.SetActive(true);
-			inSauna = true;
+			isInSaunaTrigger = true;
 		}
 	}
 
 	void OnTriggerExit(Collider col) {
 		if(col.tag == "Player") {
 			saunaText.gameObject.SetActive(false);
-			inSauna = false;
+			isInSaunaTrigger = false;
 		}
 	}
 
 	void Update() {
-		if(inSauna && Input.GetKeyDown(KeyCode.E)) {
-			player.currentWarmth += warmthGainAmount;
+		if(isInSaunaTrigger && !usedSauna && Input.GetKeyDown(KeyCode.E)) {
+			// StartCoroutine(UseSauna());
+		}
+	}
+
+	IEnumerator UseSauna() {
+		usedSauna = true;
+		
+		// Fade
+		for(;;) {
+			
 		}
 	}
 }
