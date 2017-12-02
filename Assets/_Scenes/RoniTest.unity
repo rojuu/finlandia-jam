@@ -819,15 +819,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 82748063097595916, guid: 82ad4e4afe5ed9349aecdc56105333c2,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1852475326972546, guid: 82ad4e4afe5ed9349aecdc56105333c2, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82ad4e4afe5ed9349aecdc56105333c2, type: 2}
   m_IsPrefabParent: 0
