@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 20763729519212858}
   - component: {fileID: 81562105076126812}
   - component: {fileID: 124596284455965176}
+  - component: {fileID: 114772394530865984}
+  - component: {fileID: 114018543338996408}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -94,7 +96,7 @@ GameObject:
   - component: {fileID: 114521137438747234}
   m_Layer: 0
   m_Name: FPSControllerJee
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,7 +325,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -372,6 +374,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114018543338996408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388127345005542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968ae463072a6034780438541dd57105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectMaterials:
+  - {fileID: 2100000, guid: c40008f773310c441854a6919de610e3, type: 2}
 --- !u!114 &114247399734242368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,6 +504,20 @@ MonoBehaviour:
   warmthDepletePerSecond: 2
   warmthGainPerSecond: 5
   callSound: {fileID: 8300000, guid: eee2f8b788eae5d4fa1ebfd5d375baf2, type: 3}
+--- !u!114 &114772394530865984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388127345005542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255b7a66030678a4995654eca3413e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlurMaterial: {fileID: 2100000, guid: 30445bcaff44a754d9341ee1586a3647, type: 2}
+  Iterations: 2
+  DownRes: 1
 --- !u!124 &124596284455965176
 Behaviour:
   m_ObjectHideFlags: 1
@@ -3890,7 +3919,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -268010562
+  randomSeed: 834905704
   InitialModule:
     serializedVersion: 3
     enabled: 1
