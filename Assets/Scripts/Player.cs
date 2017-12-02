@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         roni = FindObjectOfType<Roni>();
 	}
-	
+
 	void Update () {
 		if (Input.GetMouseButton(0)) {
 			isDrinking = true;

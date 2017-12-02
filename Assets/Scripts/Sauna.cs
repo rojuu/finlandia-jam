@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Sauna : MonoBehaviour {
 	public Image fadeImage;
+	public float fadeSpeed;
 	public float warmthGainAmount;
 
 	Text saunaText;
@@ -36,12 +37,36 @@ public class Sauna : MonoBehaviour {
 		}
 	}
 
+	IEnumerator Fade(Color fadeColor, float lerpTime, float startAlpha, float endAlpha) {
+		float currentLerpTime = 0f;
+		for(;;) {
+			currentLerpTime += Time.deltaTime;
+			if (currentLerpTime > lerpTime) {
+				currentLerpTime = lerpTime;
+			}
+	
+			float t = currentLerpTime / lerpTime;
+			fadeColor.a = Mathf.Lerp(startAlpha, endAlpha, t);
+			fadeImage.color = fadeColor;
+
+			yield return null;
+			if(t > 0.99f) break;
+		}
+	}
+
 	IEnumerator UseSauna() {
 		usedSauna = true;
-		
-		// Fade
-		for(;;) {
-			
-		}
+
+		float lerpTime = 0.3f;
+		Color fadeColor = Color.black;
+		fadeColor.a = 0f;
+
+		yield return StartCoroutine(Fade(fadeColor, lerpTime, 0f, 1f));
+
+		print("yee sauna");
+
+		yield return new WaitForSeconds(0.4f);
+
+		yield return StartCoroutine(Fade(fadeColor, lerpTime, 1f, 0f));
 	}
 }
