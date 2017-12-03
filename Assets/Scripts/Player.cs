@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public float warmthDepletePerSecond;
 	public float warmthGainPerSecond;
 	public float huutoWarmthRaja;
+    public Image thermometer;
 	bool canHuutoWarmth = true;
 	public AudioClip[] callSoundClips;
 	public AudioClip[] viinanJuontiClips;
