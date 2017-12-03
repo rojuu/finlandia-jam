@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationMaxAmount: 100
-  rotationSpeed: 200
+  rotationSpeed: 700
 --- !u!114 &114521137438747234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1013,13 +1013,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ef58a884050dd9498785a8478c035b8, type: 3}
   audioSource: {fileID: 82197079940396914}
   isDrinking: 0
+  isInSauna: 0
   drunknessGainedPerSecond: 0.1
-  drunknessLostPerSecond: 0.01
+  drunknessLostPerSecond: 0.02
   randomHuuteluDelayMin: 2
   randomHuuteluDelayMax: 10
-  movementAngleRotation: 30
+  movementAngleRotation: 35
   movementRandom: 5
-  drunkCamRot: {x: 30, y: 40, z: 20}
+  drunkCamRot: {x: 30, y: 50, z: 20}
   maxDisplacement: 0.07
   maxBlurIterations: 8
   maxDownRes: 4
