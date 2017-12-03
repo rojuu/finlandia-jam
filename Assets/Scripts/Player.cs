@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	new Transform transform;
@@ -194,7 +195,6 @@ public class Player : MonoBehaviour {
 	}
 
 	public IEnumerator EndGame() {
-		print("yee");
 		float currentTime = 0;
 		float lerpTime = 0.2f;
 		endText.gameObject.SetActive(true);
@@ -215,5 +215,8 @@ public class Player : MonoBehaviour {
 			yield return null;
 			if(t > 0.99f) break;
 		}
+
+		yield return new WaitForSeconds(3);
+		SceneManager.LoadScene(0);
 	}
 }
