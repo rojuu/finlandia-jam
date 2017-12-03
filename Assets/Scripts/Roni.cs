@@ -42,7 +42,7 @@ public class Roni : MonoBehaviour {
             transform.position = Vector3.Lerp(startPos, endPos, perc);
         }
 
-        if (kotonaOllaan) {
+        if (kotonaOllaan && transform.position == endPos) {
             transform.LookAt(FindObjectOfType<Player>().transform.position);
         }
     }
