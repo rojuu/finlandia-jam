@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWarmth: 100
-  warmthDepletePerSecond: 2
+  warmthDepletePerSecond: 3
   warmthGainPerSecond: 5
   huutoWarmthRaja: 10
   thermometer: {fileID: 0}
@@ -943,11 +943,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 947b7c8ecdc09d346b32716e68f8f075, type: 3}
   - {fileID: 8300000, guid: efcc8cd6a497b3f478eb5474fad19cd1, type: 3}
   - {fileID: 8300000, guid: 820e4cce50feafb42a3e272137f2e1fc, type: 3}
-  - {fileID: 8300000, guid: 93de4c8d3dccf974189f4c6c032f7a31, type: 3}
+  - {fileID: 8300000, guid: 0ad4351b9c4a1ea498c881391b8bf1de, type: 3}
   - {fileID: 8300000, guid: 4951c102d345b664a811efc2f0ab7308, type: 3}
   - {fileID: 8300000, guid: 61c0bb127dac0284aa98c0d2f9b6dfe4, type: 3}
   - {fileID: 8300000, guid: 1a465ec524d64464da97cef0d8ad6cf8, type: 3}
-  - {fileID: 8300000, guid: 0ad4351b9c4a1ea498c881391b8bf1de, type: 3}
   nearSaunaClips:
   - {fileID: 8300000, guid: 4a83ed374fe1ea6449fe4a1a6ebc4356, type: 3}
   - {fileID: 8300000, guid: d855b4fe301cb0a4fb0dd2fe7252ccb8, type: 3}
@@ -1017,7 +1016,7 @@ MonoBehaviour:
   drunknessGainedPerSecond: 0.1
   drunknessLostPerSecond: 0.02
   randomHuuteluDelayMin: 2
-  randomHuuteluDelayMax: 10
+  randomHuuteluDelayMax: 5
   movementAngleRotation: 35
   movementRandom: 5
   drunkCamRot: {x: 30, y: 50, z: 20}
