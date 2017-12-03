@@ -204,6 +204,8 @@ public class Player : MonoBehaviour {
 	public IEnumerator EndGame () {
 		float currentTime = 0;
 		float lerpTime = 0.2f;
+		int endClipIndex = Random.Range(0, foundKotiClips.Length);
+		audioSource.PlayOneShot(foundKotiClips[endClipIndex]);
 		endText.gameObject.SetActive (true);
 		for (;;) {
 			currentTime += Time.deltaTime;
@@ -223,7 +225,7 @@ public class Player : MonoBehaviour {
 			if (t > 0.99f) break;
 		}
 
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds(foundKotiClips[endClipIndex].length + 1f) ;
 		SceneManager.LoadScene (0);
 	}
 }

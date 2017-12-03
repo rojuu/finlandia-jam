@@ -7,7 +7,6 @@ public class Home : MonoBehaviour {
 		Player p = col.gameObject.GetComponent<Player>();
 		if(p) {
 			if(p.kotonaOllaan) {
-				p.audioSource.PlayOneShot(p.foundKotiClips[Random.Range(0, p.foundKotiClips.Length)]);
 				StartCoroutine(p.EndGame());
 			}
 		}
