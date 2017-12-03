@@ -62,6 +62,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public bool isDrinking = false;
+	public bool isInSauna = false;
 
 	float _drunkness = 0f;
 
@@ -107,6 +108,12 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
+		UpdateCameraRotation ();
+		
+		if(isInSauna){
+			return;
+		}
+		
 		if (Input.GetMouseButton (0)) {
 			isDrinking = true;
 			currentWarmth += warmthGainPerSecond * Time.deltaTime;
@@ -137,7 +144,6 @@ public class Player : MonoBehaviour {
 			drunkness -= drunknessLostPerSecond * Time.deltaTime;
 		}
 
-		UpdateCameraRotation ();
 
 		if (currentWarmth < huutoWarmthRaja && canHuutoWarmth) {
 			canHuutoWarmth = false;
