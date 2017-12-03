@@ -614,13 +614,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388127345005542}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968ae463072a6034780438541dd57105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectMaterials:
-  - {fileID: 2100000, guid: c40008f773310c441854a6919de610e3, type: 2}
+  EffectMaterial: {fileID: 2100000, guid: c40008f773310c441854a6919de610e3, type: 2}
 --- !u!114 &114247399734242368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -752,26 +751,28 @@ MonoBehaviour:
   warmthGainPerSecond: 5
   callSound: {fileID: 8300000, guid: eee2f8b788eae5d4fa1ebfd5d375baf2, type: 3}
   isDrinking: 0
-  drunkness: 0
   drunknessGainedPerSecond: 1
   drunknessLostPerSecond: 0.1
   movementAngleRotation: 30
   movementRandom: 5
   drunkCamRot: {x: 30, y: 40, z: 20}
+  maxDisplacement: 0.07
+  maxBlurIterations: 4
+  maxDownRes: 4
 --- !u!114 &114772394530865984
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388127345005542}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 255b7a66030678a4995654eca3413e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BlurMaterial: {fileID: 2100000, guid: 30445bcaff44a754d9341ee1586a3647, type: 2}
-  Iterations: 2
-  DownRes: 1
+  Iterations: 0
+  DownRes: 0
 --- !u!124 &124596284455965176
 Behaviour:
   m_ObjectHideFlags: 1
