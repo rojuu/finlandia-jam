@@ -20,7 +20,7 @@ public class Roni : MonoBehaviour {
 
     bool nytLerpataan = false;
     public bool foundRoni = false;
-    bool kotonaOllaan = false;
+    public bool kotonaOllaan = false;
 
     GameObject[] dogPoints;
 

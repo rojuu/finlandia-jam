@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	public float warmthGainPerSecond;
 	public float huutoWarmthRaja;
     public Image thermometer;
+	public Image whiteFill;
+	public Text endText;
 	bool canHuutoWarmth = true;
 	public AudioClip[] callSoundClips;
 	public AudioClip[] viinanJuontiClips;
@@ -34,6 +36,14 @@ public class Player : MonoBehaviour {
 			return roni.foundRoni;
 		} set {
 			roni.foundRoni = value;
+		}
+	}
+
+	public bool kotonaOllaan {
+		get {
+			return roni.kotonaOllaan;
+		} set {
+			roni.kotonaOllaan = value;
 		}
 	}
 
@@ -180,6 +190,29 @@ public class Player : MonoBehaviour {
 			if(!audioSource.isPlaying) {
 				audioSource.PlayOneShot(randomHuuteluClips[Random.Range(0, randomHuuteluClips.Length)]);
 			}
+		}
+	}
+
+	public IEnumerator EndGame() {
+		float currentTime = 0;
+		float lerpTime = 0.2f;
+		endText.gameObject.SetActive(true);
+		for(;;) {
+			currentTime+=Time.deltaTime;
+			if(currentTime > lerpTime) {
+				currentTime = lerpTime;
+			}
+
+			float t = currentTime / lerpTime;
+			Color endC = endText.color;
+			Color c = whiteFill.color;
+			c.a = Mathf.Lerp(0f, 1f, t);
+			endC.a = Mathf.Lerp(0f, 1f, t);
+			whiteFill.color = c;
+			endText.color = endC;
+			
+			yield return null;
+			if(t > 0.99f) break;
 		}
 	}
 }
