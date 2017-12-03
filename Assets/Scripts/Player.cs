@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	new Transform transform;
@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 	public float warmthDepletePerSecond;
 	public float warmthGainPerSecond;
 	public float huutoWarmthRaja;
-    public Image thermometer;
+	public Image thermometer;
 	public Image whiteFill;
 	public Text endText;
 	bool canHuutoWarmth = true;
@@ -35,7 +35,8 @@ public class Player : MonoBehaviour {
 	public bool foundRoni {
 		get {
 			return roni.foundRoni;
-		} set {
+		}
+		set {
 			roni.foundRoni = value;
 		}
 	}
@@ -43,7 +44,8 @@ public class Player : MonoBehaviour {
 	public bool kotonaOllaan {
 		get {
 			return roni.kotonaOllaan;
-		} set {
+		}
+		set {
 			roni.kotonaOllaan = value;
 		}
 	}
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour {
 		}
 		set {
 			_currentWarmth = Mathf.Clamp (value, 0, maxWarmth);
-			thermometer.fillAmount = _currentWarmth/maxWarmth;
+			thermometer.fillAmount = _currentWarmth / maxWarmth;
 		}
 	}
 
@@ -100,8 +102,8 @@ public class Player : MonoBehaviour {
 	void Start () {
 		currentWarmth = maxWarmth;
 		roni = FindObjectOfType<Roni> ();
-		audioSource.PlayOneShot(pelinAlkuClips[Random.Range(0, pelinAlkuClips.Length)]);
-		StartCoroutine(RandomHuutelu());
+		audioSource.PlayOneShot (pelinAlkuClips[Random.Range (0, pelinAlkuClips.Length)]);
+		StartCoroutine (RandomHuutelu ());
 	}
 
 	void Update () {
@@ -116,14 +118,14 @@ public class Player : MonoBehaviour {
 			isDrinking = false;
 		}
 
-		if(Input.GetMouseButtonDown(0) && !audioSource.isPlaying) {
-			int index = Random.Range(0, viinanJuontiClips.Length);
-			audioSource.PlayOneShot(viinanJuontiClips[index]);
+		if (Input.GetMouseButtonDown (0) && !audioSource.isPlaying) {
+			int index = Random.Range (0, viinanJuontiClips.Length);
+			audioSource.PlayOneShot (viinanJuontiClips[index]);
 		}
 
-		if(Input.GetMouseButtonUp(0) && !audioSource.isPlaying) {
-			int index = Random.Range(0, afterViinaClips.Length);
-			audioSource.PlayOneShot(afterViinaClips[index]);
+		if (Input.GetMouseButtonUp (0) && !audioSource.isPlaying) {
+			int index = Random.Range (0, afterViinaClips.Length);
+			audioSource.PlayOneShot (afterViinaClips[index]);
 		}
 
 		if (Input.GetMouseButtonDown (1)) {
@@ -137,21 +139,27 @@ public class Player : MonoBehaviour {
 
 		UpdateCameraRotation ();
 
-		if(currentWarmth < huutoWarmthRaja && canHuutoWarmth) {
+		if (currentWarmth < huutoWarmthRaja && canHuutoWarmth) {
 			canHuutoWarmth = false;
-			audioSource.PlayOneShot(warmthHuutoClips[Random.Range(0, warmthHuutoClips.Length)]);
+			audioSource.PlayOneShot (warmthHuutoClips[Random.Range (0, warmthHuutoClips.Length)]);
 		}
 
-		if(currentWarmth > huutoWarmthRaja+10) {
+		if (currentWarmth > huutoWarmthRaja + 10) {
 			canHuutoWarmth = true;
 		}
 	}
 
+	bool callingRoni = false;
 	IEnumerator CallRoni () {
-		int index = Random.Range(0, callSoundClips.Length);
-		audioSource.PlayOneShot (callSoundClips[index]);
-		yield return new WaitForSeconds (callSoundClips[index].length);
-		roni.CalledRoni ();
+		if (!callingRoni) {
+			callingRoni = true;
+			int index = Random.Range (0, callSoundClips.Length);
+			audioSource.Stop ();
+			audioSource.PlayOneShot (callSoundClips[index]);
+			yield return new WaitForSeconds (callSoundClips[index].length);
+			callingRoni = false;
+			roni.CalledRoni ();
+		}
 	}
 
 	Transform rotator;
@@ -184,38 +192,38 @@ public class Player : MonoBehaviour {
 		);
 	}
 
-	IEnumerator RandomHuutelu() {
-		for(;;) {
-			yield return new WaitForSeconds(Random.Range(randomHuuteluDelayMin, randomHuuteluDelayMax));
-			if(!audioSource.isPlaying) {
-				audioSource.PlayOneShot(randomHuuteluClips[Random.Range(0, randomHuuteluClips.Length)]);
+	IEnumerator RandomHuutelu () {
+		for (;;) {
+			yield return new WaitForSeconds (Random.Range (randomHuuteluDelayMin, randomHuuteluDelayMax));
+			if (!audioSource.isPlaying) {
+				audioSource.PlayOneShot (randomHuuteluClips[Random.Range (0, randomHuuteluClips.Length)]);
 			}
 		}
 	}
 
-	public IEnumerator EndGame() {
+	public IEnumerator EndGame () {
 		float currentTime = 0;
 		float lerpTime = 0.2f;
-		endText.gameObject.SetActive(true);
-		for(;;) {
-			currentTime+=Time.deltaTime;
-			if(currentTime > lerpTime) {
+		endText.gameObject.SetActive (true);
+		for (;;) {
+			currentTime += Time.deltaTime;
+			if (currentTime > lerpTime) {
 				currentTime = lerpTime;
 			}
 
 			float t = currentTime / lerpTime;
 			Color endC = endText.color;
 			Color c = whiteFill.color;
-			c.a = Mathf.Lerp(0f, 1f, t);
-			endC.a = Mathf.Lerp(0f, 1f, t);
+			c.a = Mathf.Lerp (0f, 1f, t);
+			endC.a = Mathf.Lerp (0f, 1f, t);
 			whiteFill.color = c;
 			endText.color = endC;
-			
+
 			yield return null;
-			if(t > 0.99f) break;
+			if (t > 0.99f) break;
 		}
 
-		yield return new WaitForSeconds(3);
-		SceneManager.LoadScene(0);
+		yield return new WaitForSeconds (3);
+		SceneManager.LoadScene (0);
 	}
 }

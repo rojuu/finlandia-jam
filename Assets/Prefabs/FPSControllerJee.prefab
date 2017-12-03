@@ -767,7 +767,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388127345005542}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968ae463072a6034780438541dd57105, type: 3}
   m_Name: 
@@ -871,10 +871,17 @@ MonoBehaviour:
     BobAmount: 0.1
   m_StepInterval: 5
   m_FootstepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  - {fileID: 8300000, guid: 812677a4d873b3f4ab142d1fffa38929, type: 3}
+  - {fileID: 8300000, guid: 0166967131b32734f819e90b4ab00354, type: 3}
+  - {fileID: 8300000, guid: f1c84a82163d98140a20aa7f65240a63, type: 3}
+  - {fileID: 8300000, guid: e4db9f42256b95b4fa15fb84211b3cf5, type: 3}
+  - {fileID: 8300000, guid: 0ffdfb4c14202ff4dad5c6cee80a6eda, type: 3}
+  - {fileID: 8300000, guid: 2f4893dbe4aa86c42943fbe715a6b7e1, type: 3}
+  - {fileID: 8300000, guid: 2ce62bdf490e57a458b5c7187a25e981, type: 3}
+  - {fileID: 8300000, guid: 17cc57406ba0ccf45b1945781af93f63, type: 3}
+  - {fileID: 8300000, guid: fe154fed191524f46bdad5a185483591, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: f37b904bbf229624a82eabaf8bfb9926, type: 3}
+  m_LandSound: {fileID: 8300000, guid: fe154fed191524f46bdad5a185483591, type: 3}
 --- !u!114 &114331249715402258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1007,14 +1014,14 @@ MonoBehaviour:
   audioSource: {fileID: 82197079940396914}
   isDrinking: 0
   drunknessGainedPerSecond: 0.1
-  drunknessLostPerSecond: 0.05
+  drunknessLostPerSecond: 0.01
   randomHuuteluDelayMin: 2
   randomHuuteluDelayMax: 10
   movementAngleRotation: 30
   movementRandom: 5
   drunkCamRot: {x: 30, y: 40, z: 20}
   maxDisplacement: 0.07
-  maxBlurIterations: 4
+  maxBlurIterations: 8
   maxDownRes: 4
 --- !u!114 &114772394530865984
 MonoBehaviour:

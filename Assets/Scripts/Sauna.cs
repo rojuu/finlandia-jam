@@ -63,10 +63,10 @@ public class Sauna : MonoBehaviour {
 		float lerpTime = fadeTime;
 		Color fadeColor = Color.black;
 		fadeColor.a = 0f;
-
-		player.audioSource.PlayOneShot(player.avaaSaunanClips[Random.Range(0, player.avaaSaunanClips.Length)]);
+		int index = Random.Range(0, player.avaaSaunanClips.Length);
+		player.audioSource.PlayOneShot(player.avaaSaunanClips[index]);
 		yield return StartCoroutine(Fade(fadeColor, lerpTime, 0f, 1f));
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(player.avaaSaunanClips[index].length + 0.1f);
 
 
 		player.audioSource.PlayOneShot(player.inSaunaClips[Random.Range(0, player.inSaunaClips.Length)]);
