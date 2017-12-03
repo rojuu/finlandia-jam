@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 			return _drunkness;
 		}
 		set {
-			_drunkness = value;
+			_drunkness = Mathf.Clamp (value, 0, 1);
 			UpdateShaders ();
 		}
 	}

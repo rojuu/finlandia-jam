@@ -59,6 +59,7 @@ public class Sauna : MonoBehaviour {
 
 	IEnumerator UseSauna() {
 		usedSauna = true;
+		player.currentWarmth += warmthGainAmount;
 
 		float lerpTime = fadeTime;
 		Color fadeColor = Color.black;
@@ -75,7 +76,7 @@ public class Sauna : MonoBehaviour {
 
 		saunaText.gameObject.SetActive(false);
 		player.currentWarmth += warmthGainAmount;
-        player.drunkness += soberGainAmount;
+        player.drunkness -= soberGainAmount;
 
 		yield return StartCoroutine(Fade(fadeColor, lerpTime, 1f, 0f));
 	}
