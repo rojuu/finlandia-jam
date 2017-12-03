@@ -194,6 +194,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public IEnumerator EndGame() {
+		print("yee");
 		float currentTime = 0;
 		float lerpTime = 0.2f;
 		endText.gameObject.SetActive(true);
