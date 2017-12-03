@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour {
     public float waitTime;
     public Image fadeImage;
 
+    public Text tutorial;
+
     Player player;
 
     bool isDead;
 
 	void Start () {
         player = FindObjectOfType<Player>();
+        StartCoroutine(RemoveTutorial(7));
 	}
 	
 	void Update () {
@@ -64,5 +67,10 @@ public class GameManager : MonoBehaviour {
             yield return null;
             if (t > 0.99f) break;
         }
+    }
+
+    IEnumerator RemoveTutorial(float waitTime) {
+        yield return new WaitForSeconds(waitTime);
+        tutorial.gameObject.SetActive(false);
     }
 }
