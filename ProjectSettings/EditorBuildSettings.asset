@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Main.unity
+    guid: 445f5d8296fb71a4ab07daab5cf324a1
+  - enabled: 1
+    path: Assets/_Scenes/ToniTestet.unity
+    guid: e15a84ec757349b4f88ddee4cfa1f084
