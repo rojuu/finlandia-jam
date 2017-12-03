@@ -99,7 +99,6 @@ public class Player : MonoBehaviour {
 
 	void Start () {
 		currentWarmth = maxWarmth;
-		audioSource = GetComponent<AudioSource> ();
 		roni = FindObjectOfType<Roni> ();
 		audioSource.PlayOneShot(pelinAlkuClips[Random.Range(0, pelinAlkuClips.Length)]);
 		StartCoroutine(RandomHuutelu());

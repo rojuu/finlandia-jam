@@ -176,6 +176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4519057190696158}
+  - component: {fileID: 82197079940396914}
   m_Layer: 0
   m_Name: Rotator
   m_TagString: Untagged
@@ -183,6 +184,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1962817240546666
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4093698803914256}
+  - component: {fileID: 33221998049614426}
+  - component: {fileID: 23106576289134436}
+  m_Layer: 0
+  m_Name: Circle_003
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4093698803914256
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962817240546666}
+  m_LocalRotation: {x: -0.38421646, y: -0.4406584, z: 0.5185165, w: 0.6239701}
+  m_LocalPosition: {x: 0.0517, y: 0.0043, z: 0.0784}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_Children: []
+  m_Father: {fileID: 4742813910401912}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.289, y: -71.55, z: 80.382}
 --- !u!4 &4152840131267260
 Transform:
   m_ObjectHideFlags: 1
@@ -279,7 +310,8 @@ Transform:
   m_LocalRotation: {x: -0.1512579, y: -0.05406757, z: -0.8624838, w: 0.4799162}
   m_LocalPosition: {x: -0.192, y: -0.263, z: 0.164}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 4093698803914256}
   m_Father: {fileID: 4403369189101676}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -13.795001, y: 12.429001, z: -123.323006}
@@ -357,12 +389,12 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!23 &23512798182897038
+--- !u!23 &23106576289134436
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1369051976520798}
+  m_GameObject: {fileID: 1962817240546666}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -371,7 +403,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ca2f4aba7bd8a9f4a9efa6059f92ee85, type: 2}
+  - {fileID: 2100000, guid: bf3f4f3c3161d1445a2f4f0912e019b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,6 +423,47 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23512798182897038
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1369051976520798}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 01d4e88a3b5807647b1e4fbe5be53835, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33221998049614426
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962817240546666}
+  m_Mesh: {fileID: 4300004, guid: fa323d6b381d1e34fa1dd795a404d473, type: 3}
 --- !u!33 &33902567472025314
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -420,6 +493,86 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388127345005542}
   m_Enabled: 1
+--- !u!82 &82197079940396914
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896613958055224}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82748063097595916
 AudioSource:
   m_ObjectHideFlags: 1
@@ -614,7 +767,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388127345005542}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968ae463072a6034780438541dd57105, type: 3}
   m_Name: 
@@ -749,10 +902,114 @@ MonoBehaviour:
   maxWarmth: 100
   warmthDepletePerSecond: 2
   warmthGainPerSecond: 5
-  callSound: {fileID: 8300000, guid: eee2f8b788eae5d4fa1ebfd5d375baf2, type: 3}
+  huutoWarmthRaja: 10
+  thermometer: {fileID: 0}
+  whiteFill: {fileID: 0}
+  endText: {fileID: 0}
+  callSoundClips:
+  - {fileID: 8300000, guid: a64b4afcec7c5174fbd871d6e952e8e3, type: 3}
+  - {fileID: 8300000, guid: 9d47898f86f373d489bfd686bb072625, type: 3}
+  - {fileID: 8300000, guid: 90929715c2b53184aa74a119539124de, type: 3}
+  - {fileID: 8300000, guid: 78a7dbf12c32e2a408f1a1f711a8a66b, type: 3}
+  - {fileID: 8300000, guid: d57566836fa3605438e1c3f850f60059, type: 3}
+  - {fileID: 8300000, guid: 06e0e9082d5004949b2ed1dbd3eea263, type: 3}
+  - {fileID: 8300000, guid: b2cba26e86c482e4e93edc1d2ec58993, type: 3}
+  - {fileID: 8300000, guid: 6d5156821e7c5cb45a9b207c58181286, type: 3}
+  - {fileID: 8300000, guid: 38005cb29d0976142824257619110480, type: 3}
+  - {fileID: 8300000, guid: 54dec792cf0ac5e4da3ba8a7a677034f, type: 3}
+  - {fileID: 8300000, guid: 6fbe045db3f6ce74d80ad7411710bf66, type: 3}
+  - {fileID: 8300000, guid: a8bb04f653a3aac4098126e13247965e, type: 3}
+  - {fileID: 8300000, guid: 56b553aaff783ce469946fcec5d59d74, type: 3}
+  - {fileID: 8300000, guid: 209b2fa6c0e5b2945b9ab441da2a6910, type: 3}
+  viinanJuontiClips:
+  - {fileID: 8300000, guid: 85cdbd9ae1556d84c8623c72d4e0f30d, type: 3}
+  - {fileID: 8300000, guid: b0cb43806af064549a97594fd95c4f51, type: 3}
+  - {fileID: 8300000, guid: efdcc29f580e3354ca4c1918b5a9df57, type: 3}
+  - {fileID: 8300000, guid: b4586a235f2349542b5cb421661765b9, type: 3}
+  afterViinaClips:
+  - {fileID: 8300000, guid: cd98794d043da2044abc395e55e6311d, type: 3}
+  - {fileID: 8300000, guid: dfec2637f535c284aa6a5c466d81e992, type: 3}
+  - {fileID: 8300000, guid: 815301c8d293a83489b91cbc7d2a16dc, type: 3}
+  - {fileID: 8300000, guid: 94dc25c3dc383a3438a00ea630742ef3, type: 3}
+  - {fileID: 8300000, guid: bb1392d9aad7a1240a500e66c91202ef, type: 3}
+  - {fileID: 8300000, guid: 13c0996e70996aa4bbe10068e0aa7757, type: 3}
+  - {fileID: 8300000, guid: 947b7c8ecdc09d346b32716e68f8f075, type: 3}
+  - {fileID: 8300000, guid: efcc8cd6a497b3f478eb5474fad19cd1, type: 3}
+  - {fileID: 8300000, guid: 820e4cce50feafb42a3e272137f2e1fc, type: 3}
+  - {fileID: 8300000, guid: 93de4c8d3dccf974189f4c6c032f7a31, type: 3}
+  - {fileID: 8300000, guid: 4951c102d345b664a811efc2f0ab7308, type: 3}
+  - {fileID: 8300000, guid: 61c0bb127dac0284aa98c0d2f9b6dfe4, type: 3}
+  - {fileID: 8300000, guid: 1a465ec524d64464da97cef0d8ad6cf8, type: 3}
+  - {fileID: 8300000, guid: 0ad4351b9c4a1ea498c881391b8bf1de, type: 3}
+  nearSaunaClips:
+  - {fileID: 8300000, guid: 4a83ed374fe1ea6449fe4a1a6ebc4356, type: 3}
+  - {fileID: 8300000, guid: d855b4fe301cb0a4fb0dd2fe7252ccb8, type: 3}
+  - {fileID: 8300000, guid: eb7d7a3cb53aa5148a9e8143145f2732, type: 3}
+  avaaSaunanClips:
+  - {fileID: 8300000, guid: 2213efeb95ca4b744936e8816a175210, type: 3}
+  - {fileID: 8300000, guid: f45815b93f4c822428d7b8ede808a2fd, type: 3}
+  - {fileID: 8300000, guid: b576fb26adc7be24db7e9faa7b4ce7ec, type: 3}
+  inSaunaClips:
+  - {fileID: 8300000, guid: 9fe180446138a284aade51029005e467, type: 3}
+  - {fileID: 8300000, guid: 50a00ad697316bc478427687fc678903, type: 3}
+  afterSaunaClips:
+  - {fileID: 8300000, guid: 61c0bb127dac0284aa98c0d2f9b6dfe4, type: 3}
+  - {fileID: 8300000, guid: 1a465ec524d64464da97cef0d8ad6cf8, type: 3}
+  foundRoniClips:
+  - {fileID: 8300000, guid: 295ed0bba433f9f4ca6a1eef06bd2889, type: 3}
+  - {fileID: 8300000, guid: 1d865422fd486bd48bdc1294d6f03da1, type: 3}
+  - {fileID: 8300000, guid: 1717058ef06948c4b9a318488b6a10a0, type: 3}
+  - {fileID: 8300000, guid: f55b0e68564fd294c8e4e84789ff0341, type: 3}
+  warmthHuutoClips:
+  - {fileID: 8300000, guid: 6f4792fcc175dcf4abf018fc24010e83, type: 3}
+  - {fileID: 8300000, guid: 7d68f520ab31350479c967b0aca6e318, type: 3}
+  - {fileID: 8300000, guid: d369fff514836f64f9963af5f5e4c05b, type: 3}
+  - {fileID: 8300000, guid: dc470392623feba43801eff14f4f733e, type: 3}
+  pelinAlkuClips:
+  - {fileID: 8300000, guid: 1d95d531884f63d45893917115f98a7b, type: 3}
+  - {fileID: 8300000, guid: 88c1baf8925b5fd48a818585425b46b8, type: 3}
+  foundKotiClips:
+  - {fileID: 8300000, guid: 580ba736c79a3544297e6712f7a1ae48, type: 3}
+  kuolemaClips:
+  - {fileID: 8300000, guid: eee2f8b788eae5d4fa1ebfd5d375baf2, type: 3}
+  randomHuuteluClips:
+  - {fileID: 8300000, guid: c21fc38c5c625914ca7c05bdb345586a, type: 3}
+  - {fileID: 8300000, guid: dea0d307f47b1f94d84b0104538ec866, type: 3}
+  - {fileID: 8300000, guid: dea0d307f47b1f94d84b0104538ec866, type: 3}
+  - {fileID: 8300000, guid: 5ed355a1316734349b3d917c88d0ee50, type: 3}
+  - {fileID: 8300000, guid: 0babbdba5aa21464fbd0378d23d78fe3, type: 3}
+  - {fileID: 8300000, guid: 66dd105bb7b7f554a932970f5b0ec02a, type: 3}
+  - {fileID: 8300000, guid: c696e2f669c53af4b97aa25aae87fa3a, type: 3}
+  - {fileID: 8300000, guid: 4bfb2cf7bc322184482feb8f7e1e1bf6, type: 3}
+  - {fileID: 8300000, guid: 7d456a698f8dfe2439bb12c303b2777a, type: 3}
+  - {fileID: 8300000, guid: e1ae0bf7fa43bee48b95e2b8709206be, type: 3}
+  - {fileID: 8300000, guid: ea2283de3e265124490982cb9ed8e280, type: 3}
+  - {fileID: 8300000, guid: 11ec6f2f05d480046b34efcc22162d47, type: 3}
+  - {fileID: 8300000, guid: 17bc208b6954ed24e9e63b1c10432af4, type: 3}
+  - {fileID: 8300000, guid: 171e6d003a7a5a948a5c8b2e445474b6, type: 3}
+  - {fileID: 8300000, guid: 7e48ce985897d114298bf30cf7eb5e4c, type: 3}
+  - {fileID: 8300000, guid: 454a3f81f22394a478fc690ae44d0eaf, type: 3}
+  - {fileID: 8300000, guid: fb97ab60b45872c439b455c2d5816f94, type: 3}
+  - {fileID: 8300000, guid: fc2c249993435084eaac0fdc46bf0e46, type: 3}
+  - {fileID: 8300000, guid: d5d9c802c1a200544bcedb055baa88ee, type: 3}
+  - {fileID: 8300000, guid: 0dc9f01c76f07bc4192e99fb0bdb65b7, type: 3}
+  - {fileID: 8300000, guid: eac546459c8a6cb46828de5a5ebcff8f, type: 3}
+  - {fileID: 8300000, guid: d9b5f337d166f7b49bf9cf2a64b9640f, type: 3}
+  - {fileID: 8300000, guid: 4c05473b13733d24b81c9e21ee012958, type: 3}
+  - {fileID: 8300000, guid: 3a1d7072883086c4a8e1b2a709016456, type: 3}
+  - {fileID: 8300000, guid: 8c1a58b54e2a9fd48b0940c4d44d9fb9, type: 3}
+  - {fileID: 8300000, guid: 860f5d37c441fb449b1cd1797324e442, type: 3}
+  - {fileID: 8300000, guid: 6d1e422ed663f754090dd1009223bfb5, type: 3}
+  - {fileID: 8300000, guid: 58155626926c8934dbfc638438c99db2, type: 3}
+  - {fileID: 8300000, guid: e65bd701a349e8a458f33f6e5c7a8b57, type: 3}
+  - {fileID: 8300000, guid: e218602e4d3c8214d9e14596b10f26df, type: 3}
+  - {fileID: 8300000, guid: 9ef58a884050dd9498785a8478c035b8, type: 3}
+  audioSource: {fileID: 82197079940396914}
   isDrinking: 0
-  drunknessGainedPerSecond: 1
-  drunknessLostPerSecond: 0.1
+  drunknessGainedPerSecond: 0.1
+  drunknessLostPerSecond: 0.05
+  randomHuuteluDelayMin: 2
+  randomHuuteluDelayMax: 10
   movementAngleRotation: 30
   movementRandom: 5
   drunkCamRot: {x: 30, y: 40, z: 20}
