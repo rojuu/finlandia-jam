@@ -51,17 +51,32 @@ public class Roni : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
             print("Hauhau oot mun triggerin sisäl");
             nytLerpataan = false;
-            foundRoni = true;
-            audioSource.PlayOneShot(barkSound);
-            Player p = other.gameObject.GetComponent<Player>();
-            p.audioSource.PlayOneShot(p.foundRoniClips[Random.Range(0, p.foundRoniClips.Length)]);
-            StartCoroutine(SwitchPlaces(waitTime));
+
+            if (!foundRoni) {
+                audioSource.PlayOneShot(barkSound);
+                Player p = other.gameObject.GetComponent<Player>();
+                p.audioSource.PlayOneShot(p.foundRoniClips[Random.Range(0, p.foundRoniClips.Length)]);
+                foundRoni = true;
+            }
+
+            currentLerpTime = 0;
+            startPos = transform.position;
+            endPos = homePoint;
+            moveDistance = Vector3.Distance(startPos, endPos);
+            lerpTime = moveDistance / speed;
+            nytLerpataan = true;
         }
 
         if (other.gameObject.tag == "HomePoint") {
             kotonaOllaan = true;
         }
 
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            nytLerpataan = false;
+        }
     }
 
     public void CalledRoni() {
@@ -86,6 +101,7 @@ public class Roni : MonoBehaviour {
             nytLerpataan = true;
         }
         
+        /*
         if (foundRoni) {
             startPos = transform.position;
             endPos = homePoint;
@@ -93,5 +109,6 @@ public class Roni : MonoBehaviour {
             lerpTime = moveDistance / (speed * 0.5f);
             nytLerpataan = true;
         }
+        */
     }
 }
