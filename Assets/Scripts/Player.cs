@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
 	public AudioClip[] pelinAlkuClips;
 	public AudioClip[] foundKotiClips;
 	public AudioClip[] kuolemaClips;
+	public AudioClip[] randomHuuteluClips;
 
 	public AudioSource audioSource;
 
@@ -62,6 +63,8 @@ public class Player : MonoBehaviour {
 	public float drunknessGainedPerSecond = 1f;
 	public float drunknessLostPerSecond = 0.1f;
 
+	public float randomHuuteluDelayMin, randomHuuteluDelayMax;
+
 	[Header ("Drunkness effects")]
 	public float movementAngleRotation = 270f;
 	public float movementRandom = 5f;
@@ -86,6 +89,7 @@ public class Player : MonoBehaviour {
 		audioSource = GetComponent<AudioSource> ();
 		roni = FindObjectOfType<Roni> ();
 		audioSource.PlayOneShot(pelinAlkuClips[Random.Range(0, pelinAlkuClips.Length)]);
+		StartCoroutine(RandomHuutelu());
 	}
 
 	void Update () {
@@ -166,5 +170,14 @@ public class Player : MonoBehaviour {
 		bb.DownRes = Mathf.RoundToInt (
 			Mathf.Lerp (0, maxDownRes, drunkness)
 		);
+	}
+
+	IEnumerator RandomHuutelu() {
+		for(;;) {
+			yield return new WaitForSeconds(Random.Range(randomHuuteluDelayMin, randomHuuteluDelayMax));
+			if(!audioSource.isPlaying) {
+				audioSource.PlayOneShot(randomHuuteluClips[Random.Range(0, randomHuuteluClips.Length)]);
+			}
+		}
 	}
 }
