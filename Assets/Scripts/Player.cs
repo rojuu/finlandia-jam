@@ -84,7 +84,7 @@ public class Player : MonoBehaviour {
 
 		if (currentWarmth > 0 && !isDrinking) {
 			currentWarmth -= warmthDepletePerSecond * Time.deltaTime;
-			currentWarmth -= drunknessLostPerSecond * Time.deltaTime;
+			drunkness -= drunknessLostPerSecond * Time.deltaTime;
 		}
 		UpdateCameraRotation ();
 	}
