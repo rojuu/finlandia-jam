@@ -21,6 +21,7 @@ public class Sauna : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col) {
 		if(col.tag == "Player" && !usedSauna) {
+			player.audioSource.PlayOneShot(player.nearSaunaClips[Random.Range(0, player.nearSaunaClips.Length)]);
 			saunaText.gameObject.SetActive(true);
 			isInSaunaTrigger = true;
 		}
@@ -63,9 +64,14 @@ public class Sauna : MonoBehaviour {
 		Color fadeColor = Color.black;
 		fadeColor.a = 0f;
 
+		player.audioSource.PlayOneShot(player.avaaSaunanClips[Random.Range(0, player.avaaSaunanClips.Length)]);
 		yield return StartCoroutine(Fade(fadeColor, lerpTime, 0f, 1f));
+		yield return new WaitForSeconds(0.5f);
 
+
+		player.audioSource.PlayOneShot(player.inSaunaClips[Random.Range(0, player.inSaunaClips.Length)]);
 		yield return new WaitForSeconds(blackTime);
+		player.audioSource.PlayOneShot(player.afterSaunaClips[Random.Range(0, player.afterSaunaClips.Length)]);
 
 		saunaText.gameObject.SetActive(false);
 		player.currentWarmth += warmthGainAmount;

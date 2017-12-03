@@ -19,7 +19,7 @@ public class Roni : MonoBehaviour {
     Vector3 homePoint;
 
     bool nytLerpataan = false;
-    bool foundRoni = false;
+    public bool foundRoni = false;
     bool kotonaOllaan = false;
 
     GameObject[] dogPoints;
@@ -53,6 +53,8 @@ public class Roni : MonoBehaviour {
             nytLerpataan = false;
             foundRoni = true;
             audioSource.PlayOneShot(barkSound);
+            Player p = other.gameObject.GetComponent<Player>();
+            p.audioSource.PlayOneShot(p.foundRoniClips[Random.Range(0, p.foundRoniClips.Length)]);
             StartCoroutine(SwitchPlaces(waitTime));
         }
 

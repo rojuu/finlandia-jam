@@ -8,11 +8,32 @@ public class Player : MonoBehaviour {
 	public float maxWarmth;
 	public float warmthDepletePerSecond;
 	public float warmthGainPerSecond;
-	public AudioClip callSound;
+	public float huutoWarmthRaja;
+	bool canHuutoWarmth = true;
+	public AudioClip[] callSoundClips;
+	public AudioClip[] viinanJuontiClips;
+	public AudioClip[] afterViinaClips;
+	public AudioClip[] nearSaunaClips;
+	public AudioClip[] avaaSaunanClips;
+	public AudioClip[] inSaunaClips;
+	public AudioClip[] afterSaunaClips;
+	public AudioClip[] foundRoniClips;
+	public AudioClip[] warmthHuutoClips;
+	public AudioClip[] pelinAlkuClips;
+	public AudioClip[] foundKotiClips;
+	public AudioClip[] kuolemaClips;
 
-	AudioSource audioSource;
+	public AudioSource audioSource;
 
 	Roni roni;
+
+	public bool foundRoni {
+		get {
+			return roni.foundRoni;
+		} set {
+			roni.foundRoni = value;
+		}
+	}
 
 	private float _currentWarmth;
 	public float currentWarmth {
@@ -64,6 +85,7 @@ public class Player : MonoBehaviour {
 		currentWarmth = maxWarmth;
 		audioSource = GetComponent<AudioSource> ();
 		roni = FindObjectOfType<Roni> ();
+		audioSource.PlayOneShot(pelinAlkuClips[Random.Range(0, pelinAlkuClips.Length)]);
 	}
 
 	void Update () {
@@ -78,6 +100,16 @@ public class Player : MonoBehaviour {
 			isDrinking = false;
 		}
 
+		if(Input.GetMouseButtonDown(0) && !audioSource.isPlaying) {
+			int index = Random.Range(0, viinanJuontiClips.Length);
+			audioSource.PlayOneShot(viinanJuontiClips[index]);
+		}
+
+		if(Input.GetMouseButtonUp(0) && !audioSource.isPlaying) {
+			int index = Random.Range(0, afterViinaClips.Length);
+			audioSource.PlayOneShot(afterViinaClips[index]);
+		}
+
 		if (Input.GetMouseButtonDown (1)) {
 			StartCoroutine (CallRoni ());
 		}
@@ -86,12 +118,23 @@ public class Player : MonoBehaviour {
 			currentWarmth -= warmthDepletePerSecond * Time.deltaTime;
 			drunkness -= drunknessLostPerSecond * Time.deltaTime;
 		}
+
 		UpdateCameraRotation ();
+
+		if(currentWarmth < huutoWarmthRaja && canHuutoWarmth) {
+			canHuutoWarmth = false;
+			audioSource.PlayOneShot(warmthHuutoClips[Random.Range(0, warmthHuutoClips.Length)]);
+		}
+
+		if(currentWarmth > huutoWarmthRaja+10) {
+			canHuutoWarmth = true;
+		}
 	}
 
 	IEnumerator CallRoni () {
-		audioSource.PlayOneShot (callSound);
-		yield return new WaitForSeconds (callSound.length);
+		int index = Random.Range(0, callSoundClips.Length);
+		audioSource.PlayOneShot (callSoundClips[index]);
+		yield return new WaitForSeconds (callSoundClips[index].length);
 		roni.CalledRoni ();
 	}
 
