@@ -44,6 +44,7 @@ public class Player : MonoBehaviour {
 		}
 		set {
 			_currentWarmth = Mathf.Clamp (value, 0, maxWarmth);
+			thermometer.fillAmount = _currentWarmth/maxWarmth;
 		}
 	}
 
